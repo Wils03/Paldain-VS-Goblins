@@ -8,7 +8,7 @@ Este jogo foi desenvolvido utilizando a Godot Engine e programação em GDScript
 
 ## Instalação
 Não se preocupe com a instalação! Para jogar, basta acessar o link abaixo e clicar em "Run Game":
-[Paladin VS Goblins]([#](https://formigon.itch.io/paladins-vs-goblins))
+[Paladin VS Goblins](https://formigon.itch.io/paladins-vs-goblins)
 
 ## Uso
 ### Controles
