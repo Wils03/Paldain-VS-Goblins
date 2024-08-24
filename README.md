@@ -22,6 +22,6 @@ Este projeto está licenciado sob a Licença Pública, permitindo que você jogu
 
 ## Contato
 Para mais informações ou feedback, sinta-se à vontade para entrar em contato pelo LinkedIn:  
-[Wilson Lemos](www.linkedin.com/in/wilson-lemos-118a88106)
+[Wilson Lemos](https://www.linkedin.com/in/wil-lemos)
 
 Divirta-se jogando!
