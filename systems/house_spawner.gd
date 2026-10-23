@@ -240,6 +240,8 @@ func drop_reward():
 		#Em frente à porta, num lugar que o player alcança
 		reward.position = SpawnUtils.ajustar_drop(self, desired, get_repair_point());
 		get_tree().current_scene.add_child(reward);
+		#As moedas saltam da porta, uma logo depois da outra
+		SpawnUtils.animar_drop(reward, get_door_point(), i * 0.1);
 
 func flash(color: Color):
 	modulate = color;

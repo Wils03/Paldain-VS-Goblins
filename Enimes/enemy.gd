@@ -158,3 +158,5 @@ func die():
 func drop_item():
 	var drop: AnimatedSprite2D = loot.loot_create(position);
 	get_parent().add_child(drop)
+	#O item salta de onde o inimigo morreu até o lugar onde cai
+	SpawnUtils.animar_drop(drop, position);

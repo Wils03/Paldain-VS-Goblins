@@ -10,6 +10,8 @@ func _ready():
 	
 	
 func on_body_entered(body: Node2D):
+	#Ainda voando (animação de drop): não pode ser coletado
+	if has_meta(SpawnUtils.DROP_IN_AIR): return
 	if body.is_in_group("player"):
 		var player: Player = body
 		player.obtain_gold(gold_amout);

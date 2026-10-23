@@ -91,6 +91,47 @@ static func ajustar_drop(world_node: Node2D, desired: Vector2, safe_point: Vecto
 			if ponto_coletavel(world_node, point, solo): return point
 	return safe_point;
 
+#ANIMAÇÃO DE DROP: o item voa em arco de "from" até a posição onde já está,
+#crescendo; ao pousar toca a animação de surgir/quicar (G_Spawn/M_Spawn) uma vez.
+#Só pode ser coletado depois de pousar.
+const DROP_FLIGHT_TIME = 0.45;
+#Marca que o item ainda está no ar (não pode ser coletado)
+const DROP_IN_AIR = &"drop_no_ar";
+const DROP_ARC_HEIGHT = 36.0;
+
+static func animar_drop(item: Node2D, from: Vector2, delay: float = 0.0):
+	var target = item.position;
+	var final_scale = item.scale;
+	var area: Area2D = item.get_node_or_null("Area2D");
+	if area: area.set_deferred("monitoring", false);
+	#Trava imediata (o monitoring só desliga no próximo quadro)
+	item.set_meta(DROP_IN_AIR, true);
+
+	item.position = from;
+	item.scale = final_scale * 0.4;
+	if item is AnimatedSprite2D:
+		item.stop();
+		item.frame = 0;
+
+	#Sequência: espera (opcional) -> voo em arco + crescer juntos -> pousar
+	var tween = item.create_tween();
+	if delay > 0.0: tween.tween_interval(delay);
+	tween.tween_method(func(t: float):
+		item.position = from.lerp(target, t) + Vector2(0, -sin(PI * t) * DROP_ARC_HEIGHT),
+		0.0, 1.0, DROP_FLIGHT_TIME);
+	tween.parallel().tween_property(item, "scale", final_scale, DROP_FLIGHT_TIME).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT);
+	tween.tween_callback(func(): pousar_drop(item, area));
+
+static func pousar_drop(item: Node2D, area: Area2D):
+	item.remove_meta(DROP_IN_AIR);
+	#Religar a área detecta de novo quem já estiver em cima do item
+	if area: area.monitoring = true;
+	if item is AnimatedSprite2D and item.sprite_frames:
+		var anim = item.animation;
+		#Toca a animação de surgir/quicar uma vez e para no último quadro
+		item.sprite_frames.set_animation_loop(anim, false);
+		item.play(anim);
+
 static func find_solo(tree: SceneTree) -> TileMap:
 	if tree.current_scene == null: return null
 	return tree.current_scene.get_node_or_null("Solo");
