@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="3_bf8dp"]
 [ext_resource type="Script" path="res://Enimes/comportamentos/follow_player.gd" id="4_xusem"]
 [ext_resource type="PackedScene" path="res://Enimes/comportamentos/loot.tscn" id="5_xrspq"]
-[ext_resource type="PackedScene" path="res://Misc/gold.tscn" id="6_ts30i"]
+[ext_resource type="PackedScene" path="res://Misc/coin.tscn" id="6_4i8y6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4i8y6"]
 atlas = ExtResource("3_bf8dp")
@@ -133,8 +133,8 @@ run_animation = "default"
 attack_side_animation = "Attack"
 
 [node name="Loot" parent="." unique_id=1823679371 instance=ExtResource("5_xrspq")]
-loot = Array[PackedScene]([ExtResource("6_ts30i")])
-drop_chances = Array[float]([0.0])
+loot = Array[PackedScene]([ExtResource("6_4i8y6")])
+drop_chances = Array[float]([1.0])
 
 [node name="DamageDigitMarker" type="Marker2D" parent="." unique_id=1973076595]
 position = Vector2(0, -37)

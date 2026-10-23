@@ -5,8 +5,11 @@ extends Node
 
 @onready var node: CharacterBody2D = $".."
 
-func loot_create(position) -> AnimatedSprite2D:
+#Node2D: os itens podem ser animados (saco, bife) ou não (moeda)
+func loot_create(position) -> Node2D:
 	var drop = get_random_drop_item().instantiate();
+	#Já nasce "no ar", antes de entrar na cena (a animação de drop libera ao pousar)
+	SpawnUtils.marcar_no_ar(drop);
 	#Garante que o item caia num lugar que o player consegue alcançar
 	#(nunca na água, na borda do mapa ou dentro de árvores/casas)
 	drop.position = SpawnUtils.ajustar_drop(node, position + Vector2(40,0), pes_do_inimigo(position));
@@ -24,7 +27,7 @@ func get_random_drop_item() -> PackedScene:
 	
 	var max_chance: float = 0.0
 	for drop_chance in drop_chances:
-		max_chance =+ drop_chance
+		max_chance += drop_chance
 	#jogar dado
 	var random_value = randf() * max_chance;
 	#girar rolet

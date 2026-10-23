@@ -65,7 +65,7 @@ radius = 17.2627
 
 [node name="Bife" type="AnimatedSprite2D" unique_id=2112181860]
 position = Vector2(0.9999981, 13.343748)
-scale = Vector2(0.578125, 0.578125)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_jstt2")
 frame = 6
 frame_progress = 0.812708

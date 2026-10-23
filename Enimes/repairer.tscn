@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Pawn/Purple/Pawn_Purple.png" id="3_x34yy"]
 [ext_resource type="Script" path="res://Enimes/comportamentos/repair_house.gd" id="4_qip5d"]
 [ext_resource type="PackedScene" path="res://Enimes/comportamentos/loot.tscn" id="5_1ppof"]
-[ext_resource type="PackedScene" path="res://Misc/gold.tscn" id="6_euqur"]
+[ext_resource type="PackedScene" path="res://Misc/coin.tscn" id="6_k5w33"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efabj"]
 atlas = ExtResource("3_x34yy")
@@ -178,7 +178,7 @@ shape = SubResource("CapsuleShape2D_gct2a")
 script = ExtResource("4_qip5d")
 
 [node name="Loot" parent="." unique_id=831300675 instance=ExtResource("5_1ppof")]
-loot = Array[PackedScene]([ExtResource("6_euqur")])
+loot = Array[PackedScene]([ExtResource("6_k5w33")])
 drop_chances = Array[float]([1.0])
 
 [node name="DamageDigitMarker" type="Marker2D" parent="." unique_id=889487110]

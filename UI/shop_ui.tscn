@@ -1,0 +1,850 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/shop_ui.gd" id="1_uwhra"]
+[ext_resource type="Theme" path="res://UI/ui_theme.tres" id="2_2uqcg"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="3_6dx0m"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="4_oscyi"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Warrior/Yellow/Warrior_Yellow.png" id="5_2yr27"]
+[ext_resource type="Script" path="res://UI/shop_callouts.gd" id="6_xtshp"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="7_3vplp"]
+[ext_resource type="Texture2D" path="res://UI/icons/magic_star.png" id="8_d36de"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="9_7gmjj"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="10_tand0"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Hover_3Slides.png" id="11_ilxh0"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="12_msgb4"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Icons Loja/sword.png" id="13_t70m7"]
+[ext_resource type="Texture2D" path="res://UI/icons/heart.png" id="14_yfwl6"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Icons Loja/speed.png" id="15_4xied"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjwtw"]
+content_margin_left = 72.0
+content_margin_top = 6.0
+content_margin_right = 72.0
+content_margin_bottom = 14.0
+texture = ExtResource("3_6dx0m")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_wg76w"]
+font_size = 32
+font_color = Color(1, 0.95, 0.82, 1)
+outline_size = 10
+outline_color = Color(0.27, 0.04, 0.04, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i4ogg"]
+font_size = 18
+outline_size = 6
+outline_color = Color(0.18, 0.118, 0.07, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5klky"]
+atlas = ExtResource("4_oscyi")
+region = Rect2(48, 51, 43, 45)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y6qi3"]
+font_size = 28
+font_color = Color(1, 0.84, 0.31, 1)
+outline_size = 8
+outline_color = Color(0.18, 0.118, 0.07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bpvcq"]
+font_size = 20
+outline_size = 6
+outline_color = Color(0.18, 0.118, 0.07, 1)
+
+[sub_resource type="Gradient" id="Gradient_5830b"]
+colors = PackedColorArray(1, 0.925, 0.667, 0.6, 1, 0.925, 0.667, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gf50k"]
+gradient = SubResource("Gradient_5830b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuxcs"]
+atlas = ExtResource("5_2yr27")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovwfp"]
+atlas = ExtResource("5_2yr27")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrr12"]
+atlas = ExtResource("5_2yr27")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06mvy"]
+atlas = ExtResource("5_2yr27")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8g8r"]
+atlas = ExtResource("5_2yr27")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4r7w"]
+atlas = ExtResource("5_2yr27")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqo27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuxcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovwfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrr12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06mvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8g8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4r7w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7x20f"]
+texture = ExtResource("7_3vplp")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 24.0
+region_rect = Rect2(32, 32, 128, 128)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjmx0"]
+font_size = 19
+font_color = Color(0.18, 0.118, 0.07, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgppk"]
+font_size = 24
+font_color = Color(0.24, 0.59, 0.2, 1)
+outline_size = 6
+outline_color = Color(1, 0.98, 0.86, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o12em"]
+font_size = 13
+font_color = Color(0.35, 0.25, 0.16, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v6vq8"]
+content_margin_left = 14.0
+content_margin_top = 4.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("9_7gmjj")
+texture_margin_left = 40.0
+texture_margin_right = 40.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngyim"]
+content_margin_left = 14.0
+content_margin_top = 4.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("10_tand0")
+texture_margin_left = 40.0
+texture_margin_right = 40.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ppcq7"]
+content_margin_left = 14.0
+content_margin_top = 4.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("11_ilxh0")
+texture_margin_left = 40.0
+texture_margin_right = 40.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnd7g"]
+content_margin_left = 14.0
+content_margin_top = 4.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("12_msgb4")
+texture_margin_left = 40.0
+texture_margin_right = 40.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvvck"]
+atlas = ExtResource("4_oscyi")
+region = Rect2(48, 51, 43, 45)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bnjk3"]
+font_size = 19
+font_color = Color(0.18, 0.118, 0.07, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bbbux"]
+font_size = 24
+font_color = Color(0.24, 0.59, 0.2, 1)
+outline_size = 6
+outline_color = Color(1, 0.98, 0.86, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a61qn"]
+font_size = 13
+font_color = Color(0.35, 0.25, 0.16, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m20dd"]
+atlas = ExtResource("4_oscyi")
+region = Rect2(48, 51, 43, 45)
+
+[sub_resource type="LabelSettings" id="LabelSettings_172y4"]
+font_size = 19
+font_color = Color(0.18, 0.118, 0.07, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2m0fx"]
+font_size = 24
+font_color = Color(0.24, 0.59, 0.2, 1)
+outline_size = 6
+outline_color = Color(1, 0.98, 0.86, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4j78n"]
+font_size = 13
+font_color = Color(0.35, 0.25, 0.16, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpfnw"]
+atlas = ExtResource("4_oscyi")
+region = Rect2(48, 51, 43, 45)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l654p"]
+font_size = 19
+font_color = Color(0.18, 0.118, 0.07, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ggln"]
+font_size = 24
+font_color = Color(0.24, 0.59, 0.2, 1)
+outline_size = 6
+outline_color = Color(1, 0.98, 0.86, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m2ppc"]
+font_size = 13
+font_color = Color(0.35, 0.25, 0.16, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p4t6"]
+atlas = ExtResource("4_oscyi")
+region = Rect2(48, 51, 43, 45)
+
+[node name="ShopUI" type="CanvasLayer" unique_id=173874847]
+layer = 15
+script = ExtResource("1_uwhra")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=216779587]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Root" type="Control" parent="." unique_id=1251430101]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("2_2uqcg")
+
+[node name="TitleRibbon" type="PanelContainer" parent="Root" unique_id=1137182267]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 10.0
+offset_right = 816.0
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mjwtw")
+
+[node name="Title" type="Label" parent="Root/TitleRibbon" unique_id=1289704344]
+unique_name_in_owner = true
+layout_mode = 2
+text = "FASE 1 CONCLUÍDA!"
+label_settings = SubResource("LabelSettings_wg76w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Root" unique_id=1504338151]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 276.0
+offset_top = 90.0
+offset_right = 876.0
+offset_bottom = 118.0
+text = "Equipe o paladino para a fase 2"
+label_settings = SubResource("LabelSettings_i4ogg")
+horizontal_alignment = 1
+
+[node name="GoldIcon" type="TextureRect" parent="Root" unique_id=1620916707]
+texture_filter = 1
+layout_mode = 0
+offset_left = 128.0
+offset_top = 120.0
+offset_right = 172.0
+offset_bottom = 166.0
+texture = SubResource("AtlasTexture_5klky")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldLabel" type="Label" parent="Root" unique_id=632349322]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 178.0
+offset_top = 120.0
+offset_right = 298.0
+offset_bottom = 166.0
+text = "0"
+label_settings = SubResource("LabelSettings_y6qi3")
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="Root" unique_id=1242272980]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 712.0
+offset_top = 120.0
+offset_right = 1024.0
+offset_bottom = 166.0
+text = "Próxima fase em 0:45"
+label_settings = SubResource("LabelSettings_bpvcq")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Glow" type="TextureRect" parent="Root" unique_id=84735138]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 190.0
+offset_right = 716.0
+offset_bottom = 520.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_gf50k")
+expand_mode = 1
+
+[node name="Paladin" type="AnimatedSprite2D" parent="Root" unique_id=600509649]
+texture_filter = 1
+position = Vector2(559.4, 347.8)
+scale = Vector2(2.8, 2.8)
+sprite_frames = SubResource("SpriteFrames_mqo27")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Callouts" type="Control" parent="Root" unique_id=1398849809]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("6_xtshp")
+linhas = PackedVector2Array(548.2, 235.79999, 438, 236, 665.80005, 303, 714, 236, 570.60004, 409.4, 438, 456, 581.80005, 454.19998, 714, 456)
+
+[node name="Cards" type="Control" parent="Root" unique_id=958285977]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Card_ritual" type="Panel" parent="Root/Cards" unique_id=999167499]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 172.0
+offset_right = 456.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7x20f")
+
+[node name="Icon" type="TextureRect" parent="Root/Cards/Card_ritual" unique_id=2134327468]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 78.0
+texture = ExtResource("8_d36de")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Root/Cards/Card_ritual" unique_id=736636416]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 54.0
+text = "Dano do ritual"
+label_settings = SubResource("LabelSettings_hjmx0")
+
+[node name="Plus" type="Label" parent="Root/Cards/Card_ritual" unique_id=425547774]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 54.0
+text = "+0"
+label_settings = SubResource("LabelSettings_vgppk")
+horizontal_alignment = 2
+
+[node name="Atual" type="Label" parent="Root/Cards/Card_ritual" unique_id=136509180]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 54.0
+offset_right = 310.0
+offset_bottom = 76.0
+text = "atual: -"
+label_settings = SubResource("LabelSettings_o12em")
+
+[node name="Pips" type="HBoxContainer" parent="Root/Cards/Card_ritual" unique_id=686447333]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 98.0
+offset_right = 144.0
+offset_bottom = 107.0
+theme_override_constants/separation = 3
+
+[node name="Pip1" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1247402973]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip2" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1059276576]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip3" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=659359543]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip4" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1305528543]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip5" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=948496274]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip6" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1364988014]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip7" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1832927479]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip8" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=229046146]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip9" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1221126120]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip10" type="ColorRect" parent="Root/Cards/Card_ritual/Pips" unique_id=1723377016]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="BuyButton" type="Button" parent="Root/Cards/Card_ritual" unique_id=1768887678]
+texture_filter = 1
+layout_mode = 0
+offset_left = 196.0
+offset_top = 82.0
+offset_right = 310.0
+offset_bottom = 135.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_v6vq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ngyim")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ppcq7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jnd7g")
+theme_override_font_sizes/font_size = 22
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 30
+text = "5"
+icon = SubResource("AtlasTexture_gvvck")
+
+[node name="Card_ataque" type="Panel" parent="Root/Cards" unique_id=1774213569]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 172.0
+offset_right = 1036.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7x20f")
+
+[node name="Icon" type="TextureRect" parent="Root/Cards/Card_ataque" unique_id=689277395]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 78.0
+texture = ExtResource("13_t70m7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Root/Cards/Card_ataque" unique_id=1349277120]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 54.0
+text = "Dano de ataque"
+label_settings = SubResource("LabelSettings_bnjk3")
+
+[node name="Plus" type="Label" parent="Root/Cards/Card_ataque" unique_id=971574157]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 54.0
+text = "+0"
+label_settings = SubResource("LabelSettings_bbbux")
+horizontal_alignment = 2
+
+[node name="Atual" type="Label" parent="Root/Cards/Card_ataque" unique_id=390174196]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 54.0
+offset_right = 310.0
+offset_bottom = 76.0
+text = "atual: -"
+label_settings = SubResource("LabelSettings_a61qn")
+
+[node name="Pips" type="HBoxContainer" parent="Root/Cards/Card_ataque" unique_id=1412067135]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 98.0
+offset_right = 144.0
+offset_bottom = 107.0
+theme_override_constants/separation = 3
+
+[node name="Pip1" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=1439175580]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip2" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=269495185]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip3" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=930928316]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip4" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=1088709881]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip5" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=991138037]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip6" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=538324747]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip7" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=897134494]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip8" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=1487603776]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip9" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=1037418907]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip10" type="ColorRect" parent="Root/Cards/Card_ataque/Pips" unique_id=1684814534]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="BuyButton" type="Button" parent="Root/Cards/Card_ataque" unique_id=1897116466]
+texture_filter = 1
+layout_mode = 0
+offset_left = 196.0
+offset_top = 82.0
+offset_right = 310.0
+offset_bottom = 135.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_v6vq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ngyim")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ppcq7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jnd7g")
+theme_override_font_sizes/font_size = 22
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 30
+text = "5"
+icon = SubResource("AtlasTexture_m20dd")
+
+[node name="Card_vida" type="Panel" parent="Root/Cards" unique_id=292364126]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 392.0
+offset_right = 456.0
+offset_bottom = 556.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7x20f")
+
+[node name="Icon" type="TextureRect" parent="Root/Cards/Card_vida" unique_id=1968658634]
+texture_filter = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 33.0
+offset_right = 77.0
+offset_bottom = 75.0
+texture = ExtResource("14_yfwl6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Root/Cards/Card_vida" unique_id=1808773553]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 54.0
+text = "Vida máxima"
+label_settings = SubResource("LabelSettings_172y4")
+
+[node name="Plus" type="Label" parent="Root/Cards/Card_vida" unique_id=1406163402]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 54.0
+text = "+0"
+label_settings = SubResource("LabelSettings_2m0fx")
+horizontal_alignment = 2
+
+[node name="Atual" type="Label" parent="Root/Cards/Card_vida" unique_id=1028410850]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 54.0
+offset_right = 310.0
+offset_bottom = 76.0
+text = "atual: -"
+label_settings = SubResource("LabelSettings_4j78n")
+
+[node name="Pips" type="HBoxContainer" parent="Root/Cards/Card_vida" unique_id=1446402131]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 98.0
+offset_right = 144.0
+offset_bottom = 107.0
+theme_override_constants/separation = 3
+
+[node name="Pip1" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1622779073]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip2" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1151539166]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip3" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1443253136]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip4" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1188008907]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip5" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1710078753]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip6" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=550350635]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip7" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=56300539]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip8" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1142938018]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip9" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1058751910]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip10" type="ColorRect" parent="Root/Cards/Card_vida/Pips" unique_id=1686201300]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="BuyButton" type="Button" parent="Root/Cards/Card_vida" unique_id=1189630663]
+texture_filter = 1
+layout_mode = 0
+offset_left = 196.0
+offset_top = 82.0
+offset_right = 310.0
+offset_bottom = 135.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_v6vq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ngyim")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ppcq7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jnd7g")
+theme_override_font_sizes/font_size = 22
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 30
+text = "5"
+icon = SubResource("AtlasTexture_jpfnw")
+
+[node name="Card_velocidade" type="Panel" parent="Root/Cards" unique_id=977342714]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 392.0
+offset_right = 1036.0
+offset_bottom = 556.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7x20f")
+
+[node name="Icon" type="TextureRect" parent="Root/Cards/Card_velocidade" unique_id=806536893]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 78.0
+texture = ExtResource("15_4xied")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Root/Cards/Card_velocidade" unique_id=1914817487]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 54.0
+text = "Velocidade"
+label_settings = SubResource("LabelSettings_l654p")
+
+[node name="Plus" type="Label" parent="Root/Cards/Card_velocidade" unique_id=569500495]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 20.0
+offset_right = 310.0
+offset_bottom = 54.0
+text = "+0"
+label_settings = SubResource("LabelSettings_6ggln")
+horizontal_alignment = 2
+
+[node name="Atual" type="Label" parent="Root/Cards/Card_velocidade" unique_id=1767983547]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 54.0
+offset_right = 310.0
+offset_bottom = 76.0
+text = "atual: -"
+label_settings = SubResource("LabelSettings_m2ppc")
+
+[node name="Pips" type="HBoxContainer" parent="Root/Cards/Card_velocidade" unique_id=695279754]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 98.0
+offset_right = 144.0
+offset_bottom = 107.0
+theme_override_constants/separation = 3
+
+[node name="Pip1" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=951400093]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip2" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=872279122]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip3" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=1012140772]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip4" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=109369117]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip5" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=2057917925]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip6" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=1374870619]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip7" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=222961813]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip8" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=26252350]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip9" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=871500241]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="Pip10" type="ColorRect" parent="Root/Cards/Card_velocidade/Pips" unique_id=1500030452]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+color = Color(0.47, 0.38, 0.26, 1)
+
+[node name="BuyButton" type="Button" parent="Root/Cards/Card_velocidade" unique_id=1400966107]
+texture_filter = 1
+layout_mode = 0
+offset_left = 196.0
+offset_top = 82.0
+offset_right = 310.0
+offset_bottom = 135.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_v6vq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ngyim")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ppcq7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jnd7g")
+theme_override_font_sizes/font_size = 22
+theme_override_constants/h_separation = 8
+theme_override_constants/icon_max_width = 30
+text = "5"
+icon = SubResource("AtlasTexture_7p4t6")
+
+[node name="NextButton" type="Button" parent="Root" unique_id=282640467]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 436.0
+offset_top = 578.0
+offset_right = 716.0
+offset_bottom = 634.0
+theme_type_variation = &"RedButton"
+text = "Próxima fase  ▶"

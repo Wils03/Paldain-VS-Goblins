@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" path="res://Misc/bife.tscn" id="1_wtv5q"]
 
-[node name="Bife" instance=ExtResource("1_wtv5q")]
+[node name="Bife" unique_id=616385777 instance=ExtResource("1_wtv5q")]
 modulate = Color(2, 1.5, 0, 1)
 position = Vector2(0, -7)
-scale = Vector2(1.499, 1.5)
+scale = Vector2(0.95, 0.95)
 regen_amout = 100.0

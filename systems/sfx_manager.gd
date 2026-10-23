@@ -46,6 +46,9 @@ const SOUNDS = {
 	"meat_pickup": ["pegar bife (cura)", "SFX"],
 	"ui_click": ["clique em botão", "SFX"],
 	"ui_confirm": ["confirmar / começar o jogo", "SFX"],
+	"shield_up": ["pegar a poção de escudo", "SFX"],
+	"shield_hit": ["escudo absorve um golpe", "SFX"],
+	"shield_break": ["escudo quebra", "SFX"],
 };
 
 #nome -> {"streams": [...], "bus": "SFX"}

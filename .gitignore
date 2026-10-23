@@ -13,3 +13,6 @@ exports/
 Addons/Tiny Swords/**
 !Addons/Tiny Swords/**/
 !Addons/Tiny Swords/**/*.import
+
+# Modelos de tela (mockups) usam a arte do Tiny Swords: ficam só no computador
+docs/mockups/

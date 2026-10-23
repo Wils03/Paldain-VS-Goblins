@@ -236,6 +236,7 @@ func drop_reward():
 	if not reward_scene: return
 	for i in reward_amount:
 		var reward = reward_scene.instantiate();
+		SpawnUtils.marcar_no_ar(reward);
 		var desired = to_global(Vector2(randf_range(-40, 40), randf_range(80, 120)));
 		#Em frente à porta, num lugar que o player alcança
 		reward.position = SpawnUtils.ajustar_drop(self, desired, get_repair_point());

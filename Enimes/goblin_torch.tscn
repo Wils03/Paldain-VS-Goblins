@@ -3,10 +3,12 @@
 [ext_resource type="Script" path="res://Enimes/enemy.gd" id="1_7sjp4"]
 [ext_resource type="PackedScene" path="res://Misc/skull.tscn" id="2_7tgmj"]
 [ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Goblins/Troops/Torch/Purple/Torch_Purple.png" id="3_ebvg3"]
+[ext_resource type="PackedScene" path="res://Misc/shield_potion.tscn" id="3_fcxkw"]
 [ext_resource type="Script" path="res://Enimes/comportamentos/follow_player.gd" id="4_mx2pm"]
 [ext_resource type="PackedScene" path="res://Enimes/comportamentos/loot.tscn" id="5_g2xkc"]
 [ext_resource type="PackedScene" path="res://Misc/bife.tscn" id="6_hcqy0"]
 [ext_resource type="PackedScene" path="res://Misc/gold.tscn" id="7_0bsyb"]
+[ext_resource type="PackedScene" path="res://Misc/coin.tscn" id="7_60ljq"]
 [ext_resource type="PackedScene" path="res://Misc/golden_bife.tscn" id="8_cltos"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3qhi"]
@@ -211,6 +213,8 @@ motion_mode = 1
 script = ExtResource("1_7sjp4")
 health = 20.0
 death_prefab = ExtResource("2_7tgmj")
+drops_extras = Array[PackedScene]([ExtResource("3_fcxkw"), ExtResource("8_cltos")])
+chances_extras = Array[float]([0.1, 0.1])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=478085214]
 sprite_frames = SubResource("SpriteFrames_xu1lr")
@@ -231,8 +235,8 @@ attack_up_animation = "Attack_up"
 attack_down_animation = "Attack_down"
 
 [node name="Loot" parent="." unique_id=1115821793 instance=ExtResource("5_g2xkc")]
-loot = Array[PackedScene]([ExtResource("6_hcqy0"), ExtResource("7_0bsyb"), ExtResource("8_cltos")])
-drop_chances = Array[float]([0.42, 0.42, 0.15])
+loot = Array[PackedScene]([ExtResource("7_60ljq"), ExtResource("7_0bsyb"), ExtResource("6_hcqy0")])
+drop_chances = Array[float]([0.4, 0.15, 0.3])
 
 [node name="DamageDigitMarker" type="Marker2D" parent="." unique_id=53167974]
 position = Vector2(0, -44)

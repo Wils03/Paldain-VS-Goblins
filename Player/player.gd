@@ -41,7 +41,8 @@ signal gold_colected(value: int); #Player emitie sinal quando pega gold
 func _ready():
 	GameManager.player = self;
 	GameManager.gold_counter = gold_in_bag;
-	gold_colected.connect(func(value: int) : GameManager.gold_counter +=1 );
+	#Soma o valor do item coletado (moeda = 1, saco = 5)
+	gold_colected.connect(func(value: int) : GameManager.gold_counter += value );
 
 func _process(delta: float) -> void:
 	GameManager.player_position = position;
@@ -175,7 +176,12 @@ func update_hitbox_detection(delta):
 
 func damage(amout: int):
 	if health <= 0: return
-	
+	#ESCUDO (poção azul) absorve o dano antes da vida
+	var escudo = get_node_or_null("Escudo");
+	if escudo:
+		amout = escudo.absorver(amout);
+		if amout <= 0: return
+
 	modulate = Color.RED;
 	var tween = create_tween();
 	tween.set_ease(Tween.EASE_IN);

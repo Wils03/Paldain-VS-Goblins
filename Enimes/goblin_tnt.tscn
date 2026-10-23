@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" path="res://Enimes/enemy.gd" id="1_y3aek"]
 [ext_resource type="PackedScene" path="res://Misc/skull.tscn" id="2_3aj3o"]
+[ext_resource type="PackedScene" path="res://Misc/shield_potion.tscn" id="3_3aj3o"]
 [ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="3_xfq0r"]
 [ext_resource type="Script" path="res://Enimes/comportamentos/throw_dynamite.gd" id="4_5qmq2"]
 [ext_resource type="PackedScene" path="res://Misc/dynamite.tscn" id="5_psdnt"]
 [ext_resource type="PackedScene" path="res://Enimes/comportamentos/loot.tscn" id="6_7hk7x"]
 [ext_resource type="PackedScene" path="res://Misc/bife.tscn" id="7_s34eh"]
 [ext_resource type="PackedScene" path="res://Misc/gold.tscn" id="8_1lv4a"]
+[ext_resource type="PackedScene" path="res://Misc/coin.tscn" id="8_xfq0r"]
 [ext_resource type="PackedScene" path="res://Misc/golden_bife.tscn" id="9_qieme"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m81cw"]
@@ -166,12 +168,14 @@ radius = 15.0
 height = 50.0
 
 [node name="GoblinTNT" type="CharacterBody2D" unique_id=818984125 groups=["enemies"]]
-motion_mode = 1
 collision_layer = 4
 collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_y3aek")
 health = 30.0
 death_prefab = ExtResource("2_3aj3o")
+drops_extras = Array[PackedScene]([ExtResource("3_3aj3o"), ExtResource("9_qieme")])
+chances_extras = Array[float]([0.1, 0.1])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1853083373]
 sprite_frames = SubResource("SpriteFrames_0nmya")
@@ -188,8 +192,8 @@ script = ExtResource("4_5qmq2")
 dynamite_scene = ExtResource("5_psdnt")
 
 [node name="Loot" parent="." unique_id=1782443661 instance=ExtResource("6_7hk7x")]
-loot = Array[PackedScene]([ExtResource("7_s34eh"), ExtResource("8_1lv4a"), ExtResource("9_qieme")])
-drop_chances = Array[float]([0.42, 0.42, 0.15])
+loot = Array[PackedScene]([ExtResource("8_xfq0r"), ExtResource("8_1lv4a"), ExtResource("7_s34eh")])
+drop_chances = Array[float]([0.4, 0.15, 0.3])
 
 [node name="DamageDigitMarker" type="Marker2D" parent="." unique_id=41093799]
 position = Vector2(0, -44)

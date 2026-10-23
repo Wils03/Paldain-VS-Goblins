@@ -30,6 +30,9 @@ func _initialize():
 	save("meat_pickup", meat_pickup(), 0.55)
 	save("ui_click", ui_click(), 0.4)
 	save("ui_confirm", ui_confirm(), 0.5)
+	save("shield_up", shield_up(), 0.55)
+	save("shield_hit", shield_hit(), 0.5)
+	save("shield_break", shield_break(), 0.7)
 	quit()
 
 #region SÍNTESE BÁSICA
@@ -248,6 +251,29 @@ func meat_pickup() -> PackedFloat32Array:
 
 func ui_click() -> PackedFloat32Array:
 	return envelope(tone(0.035, 1300.0, 1100.0, "square", 0, 0, 0.25), 0.001, 2.0)
+
+func shield_up() -> PackedFloat32Array:
+	# Escudo ativado: brilho subindo com acorde
+	var b = buffer(0.6)
+	for k in 3:
+		var f = [440.0, 554.0, 659.0][k]
+		b = mix(b, envelope(tone(0.5, f, f * 2.0, "triangle", 7.0, 0.01), 0.02, 1.4), k * 0.05)
+	var shimmer = envelope(highpass(noise(0.6), 5000.0), 0.15, 1.2)
+	return mix(b, gain(shimmer, 0.2))
+
+func shield_hit() -> PackedFloat32Array:
+	# Escudo absorveu um golpe: "plim" de vidro
+	var ping = envelope(tone(0.25, 1600.0, 1450.0, "sine"), 0.001, 2.5)
+	var ping2 = envelope(tone(0.25, 2410.0, 2300.0, "sine"), 0.001, 3.0)
+	return mix(ping, gain(ping2, 0.5))
+
+func shield_break() -> PackedFloat32Array:
+	# Escudo quebrou: vidro estilhaçando
+	var b = envelope(highpass(noise(0.5), 2500.0), 0.001, 2.0)
+	for k in 5:
+		var f = rng.randf_range(1800.0, 3400.0)
+		b = mix(b, gain(envelope(tone(0.12, f, f * 0.9, "sine"), 0.001, 3.0), 0.6), k * 0.04)
+	return b
 
 func ui_confirm() -> PackedFloat32Array:
 	var a = envelope(tone(0.07, 660.0, 660.0, "square"), 0.002, 0.6)

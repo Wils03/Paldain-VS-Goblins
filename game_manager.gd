@@ -12,6 +12,10 @@ var time_elapsed_string: String
 var gold_counter: int = 0
 var monsters_defeated_counter: int = 0
 
+#FASES: fase atual da partida e se a loja (entre fases) está aberta
+var fase_atual: int = 1
+var na_loja: bool = false
+
 func _process(delta):
 	#UPDATE TIMER
 	time_elapsed += delta;
@@ -35,6 +39,8 @@ func reset():
 	time_elapsed_string = "00:00";
 	gold_counter = 0
 	monsters_defeated_counter = 0
-	
+	fase_atual = 1
+	na_loja = false
+
 	for connection in game_over.get_connections():
 		game_over.disconnect(connection.callable);

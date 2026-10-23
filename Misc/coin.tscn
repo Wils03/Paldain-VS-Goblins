@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Misc/coin.gd" id="1_srmj5"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Icons Loja/coin.png" id="2_qmbdq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_keewo"]
+radius = 13.0
+
+[node name="Coin" type="Node2D" unique_id=329609527]
+script = ExtResource("1_srmj5")
+gold_amout = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=145175212]
+texture_filter = 1
+position = Vector2(0, -14)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("2_qmbdq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=357807623]
+position = Vector2(1, -18)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1342698578]
+position = Vector2(1, 6.4)
+shape = SubResource("CircleShape2D_keewo")

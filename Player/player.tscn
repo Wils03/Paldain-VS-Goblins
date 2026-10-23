@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" path="res://Misc/ritual.tscn" id="2_7rtaq"]
 [ext_resource type="PackedScene" path="res://Misc/big_skull.tscn" id="3_iqngy"]
 [ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Warrior/Yellow/Warrior_Yellow.png" id="4_th7g0"]
+[ext_resource type="Script" path="res://Player/player_upgrades.gd" id="9_upgr"]
+[ext_resource type="Script" path="res://Player/player_shield.gd" id="10_shld"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a1hc1"]
 radius = 43.10815
@@ -319,3 +321,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_73604")
 value = 100.0
 rounded = true
 show_percentage = false
+
+[node name="Upgrades" type="Node" parent="."]
+script = ExtResource("9_upgr")
+
+[node name="Escudo" type="Node2D" parent="."]
+script = ExtResource("10_shld")

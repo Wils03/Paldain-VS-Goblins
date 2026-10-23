@@ -16,6 +16,8 @@ func _ready():
 
 func _unhandled_input(event):
 	if not event.is_action_pressed("ui_cancel"): return
+	#Na loja o jogo já está pausado: o ESC não deve despausar
+	if GameManager.na_loja: return
 	if visible:
 		resume();
 	elif not GameManager.is_game_over:

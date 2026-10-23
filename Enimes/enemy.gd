@@ -9,6 +9,10 @@ var damage_digit_prefab: PackedScene
 
 @export_category("Drops")
 @export var drop_chance: float = 0.5;
+#Drops extras, cada um sorteado à parte com a sua chance
+#(ex.: nos goblins, poção de escudo 10% e bife dourado 10%)
+@export var drops_extras: Array[PackedScene];
+@export var chances_extras: Array[float];
 
 @export_category("Som")
 #Nome do efeito em Audio/sfx/ tocado ao morrer (vazio = sem som)
@@ -152,11 +156,27 @@ func die():
 		get_parent().add_child(death_object)
 	if randf() <= drop_chance:
 			drop_item();
+	var lados = [Vector2(-40, 0), Vector2(0, 36), Vector2(0, -36)];
+	var soltos = 0;
+	for i in drops_extras.size():
+		var chance = chances_extras[i] if i < chances_extras.size() else 0.0;
+		if drops_extras[i] and randf() < chance:
+			soltar_drop_extra(drops_extras[i], lados[soltos % lados.size()]);
+			soltos += 1;
 	GameManager.monsters_defeated_counter += 1;
 	queue_free();
 	
 func drop_item():
-	var drop: AnimatedSprite2D = loot.loot_create(position);
+	var drop: Node2D = loot.loot_create(position);
 	get_parent().add_child(drop)
 	#O item salta de onde o inimigo morreu até o lugar onde cai
 	SpawnUtils.animar_drop(drop, position);
+
+#Cai para um lado diferente do drop normal (+40 em x), para não ficarem empilhados
+func soltar_drop_extra(scene: PackedScene, deslocamento: Vector2):
+	var item: Node2D = scene.instantiate();
+	SpawnUtils.marcar_no_ar(item);
+	var seguro = loot.pes_do_inimigo(position) if loot else position;
+	item.position = SpawnUtils.ajustar_drop(self, position + deslocamento, seguro);
+	get_parent().add_child(item);
+	SpawnUtils.animar_drop(item, position);

@@ -99,6 +99,11 @@ const DROP_FLIGHT_TIME = 0.45;
 const DROP_IN_AIR = &"drop_no_ar";
 const DROP_ARC_HEIGHT = 36.0;
 
+#Marca o item como "no ar" ANTES de ele entrar na cena, para o _ready dele já
+#saber que vai cair (ex.: a poção só começa a flutuar depois de pousar)
+static func marcar_no_ar(item: Node):
+	item.set_meta(DROP_IN_AIR, true);
+
 static func animar_drop(item: Node2D, from: Vector2, delay: float = 0.0):
 	var target = item.position;
 	var final_scale = item.scale;
@@ -131,6 +136,25 @@ static func pousar_drop(item: Node2D, area: Area2D):
 		#Toca a animação de surgir/quicar uma vez e para no último quadro
 		item.sprite_frames.set_animation_loop(anim, false);
 		item.play(anim);
+	elif item.has_method("animar_pouso"):
+		#Itens sem folha de animação (ex.: poção) fazem o próprio quique
+		item.animar_pouso();
+
+#QUIQUE ao pousar (para itens sem folha de animação, como poção e moeda):
+#amassa, salta duas vezes e assenta. Chama "ao_terminar" no fim.
+static func quicar_sprite(sprite: Node2D, base_y: float, ao_terminar: Callable):
+	var base_scale = sprite.scale;
+	var tween = sprite.create_tween();
+	tween.tween_property(sprite, "scale", base_scale * Vector2(1.3, 0.7), 0.06);
+	tween.tween_property(sprite, "scale", base_scale * Vector2(0.85, 1.2), 0.08);
+	tween.parallel().tween_property(sprite, "position:y", base_y - 14.0, 0.12).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD);
+	tween.tween_property(sprite, "scale", base_scale, 0.08);
+	tween.parallel().tween_property(sprite, "position:y", base_y, 0.12).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD);
+	tween.tween_property(sprite, "scale", base_scale * Vector2(1.15, 0.85), 0.05);
+	tween.tween_property(sprite, "position:y", base_y - 5.0, 0.08).set_ease(Tween.EASE_OUT);
+	tween.parallel().tween_property(sprite, "scale", base_scale, 0.08);
+	tween.tween_property(sprite, "position:y", base_y, 0.08).set_ease(Tween.EASE_IN);
+	tween.tween_callback(ao_terminar);
 
 static func find_solo(tree: SceneTree) -> TileMap:
 	if tree.current_scene == null: return null
