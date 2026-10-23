@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bpx1meecr3mho"]
 
-[ext_resource type="Script" path="res://systems/mob_spawner.gd" id="1_or48q"]
+[ext_resource type="Script" uid="uid://d0icc5nbmghy5" path="res://systems/mob_spawner.gd" id="1_or48q"]
 [ext_resource type="PackedScene" path="res://Enimes/goblin_torch.tscn" id="2_7esdw"]
-[ext_resource type="Script" path="res://systems/spawn_fase.gd" id="2_jbl57"]
+[ext_resource type="Script" uid="uid://kxtqmkiv2epj" path="res://systems/spawn_fase.gd" id="2_jbl57"]
 [ext_resource type="PackedScene" path="res://Enimes/pawn.tscn" id="3_hpove"]
 [ext_resource type="PackedScene" path="res://Enimes/sheep.tscn" id="4_wr88h"]
 [ext_resource type="PackedScene" path="res://Enimes/goblin_tnt.tscn" id="5_tnt01"]
@@ -45,12 +45,13 @@ script = ExtResource("1_or48q")
 fases = Array[ExtResource("2_jbl57")]([SubResource("Resource_bkfh7"), SubResource("Resource_5loyd"), SubResource("Resource_gew58")])
 
 [node name="Path2D" type="Path2D" parent="." unique_id=892143962]
-scale = Vector2(2.71715, 2.81644)
+position = Vector2(348.91238, 0)
+scale = Vector2(3.4798582, 2.81644)
 curve = SubResource("Curve2D_ndpn8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=170446242]
 position = Vector2(500.524, -8.5214)
-rotation = 1.53674
+rotation = 1.5367343
 
 [node name="_Timer_114990" type="Timer" parent="Path2D/PathFollow2D" unique_id=950568089]
 wait_time = 0.2

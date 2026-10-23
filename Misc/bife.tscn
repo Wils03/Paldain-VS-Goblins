@@ -1,7 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://d053w3jmal80"]
 
-[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_lmab4"]
-[ext_resource type="Script" path="res://Misc/life_regen.gd" id="2_m7bh4"]
+[ext_resource type="Texture2D" uid="uid://fs0mu5ujrw72" path="res://Addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_lmab4"]
+[ext_resource type="Script" uid="uid://cen4uyyrebv0g" path="res://Misc/life_regen.gd" id="2_m7bh4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo3qr"]
 atlas = ExtResource("1_lmab4")
@@ -63,18 +63,20 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_26aoq"]
 radius = 17.2627
 
-[node name="Bife" type="AnimatedSprite2D"]
+[node name="Bife" type="AnimatedSprite2D" unique_id=2112181860]
+position = Vector2(0.9999981, 13.343748)
+scale = Vector2(0.578125, 0.578125)
 sprite_frames = SubResource("SpriteFrames_jstt2")
 frame = 6
 frame_progress = 0.812708
 offset = Vector2(0, -30)
 script = ExtResource("2_m7bh4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=973528542]
+position = Vector2(1, -18)
 collision_layer = 0
 collision_mask = 2
-position = Vector2(1, -18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2140456036]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_26aoq")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cin671df6mv1x" path="res://UI/game_ui.gd" id="1_bcgt1"]
 [ext_resource type="Texture2D" uid="uid://qknigc484ybt" path="res://Addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_aurt8"]
-[ext_resource type="Texture2D" uid="uid://db0avxgdlxyae" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="3_n7ipy"]
+[ext_resource type="Texture2D" uid="uid://ctein8o8im6k8" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle.png" id="3_fy64h"]
 [ext_resource type="Script" uid="uid://bgbf5rbkbkunt" path="res://Test_Scene/gold_label.gd" id="4_a6avt"]
 [ext_resource type="Texture2D" uid="uid://c4cqk0sankili" path="res://Addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="5_111n5"]
 [ext_resource type="Script" uid="uid://ddddcvbdbxyxm" path="res://Misc/cooldownRitualLabel.gd" id="6_k417c"]
@@ -31,8 +31,8 @@ font_size = 30
 font_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajvfq"]
-atlas = ExtResource("3_n7ipy")
-region = Rect2(48, 48, 48, 48)
+atlas = ExtResource("3_fy64h")
+region = Rect2(36.80002, 36.799988, 73.600006, 59.199997)
 margin = Rect2(-10, 0, 0, 0)
 
 [sub_resource type="SystemFont" id="SystemFont_nbbsd"]
@@ -106,13 +106,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_cbv7p")
 
 [node name="TextureRect" type="TextureRect" parent="PainelResources" unique_id=1168492982]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 8.0
-offset_right = 185.0
-offset_bottom = 59.0
+offset_left = 33.33343
+offset_top = -6.9999995
+offset_right = 119.79199
+offset_bottom = 58.999992
 texture = SubResource("AtlasTexture_ajvfq")
 expand_mode = 1
-stretch_mode = 2
+stretch_mode = 5
 
 [node name="GoldLabel" type="Label" parent="PainelResources" unique_id=444728483]
 unique_name_in_owner = true
