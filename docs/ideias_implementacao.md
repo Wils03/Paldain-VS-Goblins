@@ -145,6 +145,35 @@ Sprite em `Addons/Tiny Swords/Factions/Goblins/Troops/Barrel/<Cor>/Barrel_<Cor>.
 - **Comportamento:** fica disfarçado de barril comum pelo mapa; quando o player chega perto, acorda, corre até ele, acende o pavio e explode (dano em área, como a dinamite do goblin TNT). Matar antes que chegue evita a explosão.
 - **Variações:** a explosão também fere outros goblins (dá para usar a favor do player); barris "falsos" decorativos misturados aos reais.
 
+### Companions (aliados que seguem o player)
+Sprites em `Addons/Tiny Swords/Factions/Knights/Troops/`: `Pawn`, `Archer`, `Warrior`.
+- **Ideia:** aliados que seguem o paladino e ajudam na batalha.
+  - **Peão aliado:** coleta ouro/carne do chão e traz para o player; pode consertar coisas (espelho do goblin reparador).
+  - **Arqueiro:** fica um pouco atrás do player e atira flechas no goblin mais próximo.
+  - **Guerreiro:** fica perto do player e ataca corpo a corpo, segurando o cerco.
+- **Como conseguir:** comprar na loja entre as fases (ex.: contratar 1 aliado por vez, com limite), ou resgatar aliados presos no mapa.
+- **Comportamento base:** seguir o player mantendo distância (formação simples em volta dele), escolher alvo, ter vida própria e poder morrer; os goblins também passam a mirar neles.
+- **Upgrades possíveis:** vida/dano dos aliados, quantidade máxima, reviver na loja.
+
+### Novos inimigos e inimigos de elite
+- **Novos tipos:** o goblin do barril (acima) e outros que fujam do "andar até o player e bater" (ex.: atirador à distância, goblin que rouba ouro do chão e foge).
+- **Elite:** versão mais forte de um inimigo comum — mais vida, mais dano, um pouco maior, com cor/brilho diferente — e com loot melhor (mais ouro, chance maior de poção/carne dourada). Aparece com mais frequência nas fases avançadas.
+
+### Chefes (bosses)
+- **Regra:** a cada X fases concluídas aparece um chefe para tentar acabar com o player.
+- **Já existe a base:** o `PhaseManager` tem `fases_boss` (lista das fases de chefe) e `duracao_fase_boss` (até 5 min), e o HUD já mostra "Fase N - BOSS". Falta o chefe em si.
+- **Ideias de chefe:** goblin gigante com barra de vida no topo da tela, ataques com padrão (investida, chuva de dinamite, chamar reforços), fases do chefe conforme a vida cai.
+- **Recompensa:** muito ouro e/ou um upgrade especial ao derrotar.
+
+### Usar os efeitos de explosão e fogo
+Sprites em `Addons/Tiny Swords/Effects/Explosion/Explosions.png` (já usado na dinamite do goblin TNT) e `Addons/Tiny Swords/Effects/Fire/Fire.png` (ainda sem uso).
+- **Casa do goblin pegando fogo:** quando a vida da casa fica baixa, fogo em cima dela; ao ser destruída, explosão + fogo que vai apagando.
+- **Chão em chamas:** a dinamite deixa uma área com fogo por alguns segundos que dá dano a quem passar (player e goblins).
+- **Goblin da tocha:** o ataque pode acender fogo no chão às vezes (inimigo de elite).
+- **Barril explosivo:** a explosão do goblin kamikaze (acima).
+- **Ritual/upgrade de fogo:** um upgrade da loja que faz o ritual do paladino deixar fogo no chão ou explodir inimigos que morrem nele.
+- **Ataque de chefe:** chuva de explosões marcadas no chão antes de cair.
+
 ---
 
 ## 6. Como organizar no código (proposta)
