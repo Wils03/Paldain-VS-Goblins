@@ -1,2 +1,15 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Builds exportados (executável / web) — publicados no itch.io, não no repositório
+exports/
+
+# Arquivos temporários
+*.tmp
+
+# Arte do Tiny Swords (Pixel Frog): a licença não permite redistribuir os arquivos.
+# Baixe o pacote grátis e coloque em Addons/Tiny Swords (veja o README).
+# Os .import continuam no repositório: não têm arte, só os IDs que as cenas usam.
+Addons/Tiny Swords/**
+!Addons/Tiny Swords/**/
+!Addons/Tiny Swords/**/*.import

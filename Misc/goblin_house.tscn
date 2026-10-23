@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cb8f5ar8wx1m"]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_House/Goblin_House.png" id="1_vil47"]
+[ext_resource type="Script" path="res://systems/house_spawner.gd" id="2_hspwn"]
+[ext_resource type="PackedScene" path="res://Enimes/goblin_torch.tscn" id="3_torch"]
+[ext_resource type="PackedScene" path="res://Enimes/goblin_tnt.tscn" id="4_tnt01"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Goblins/Buildings/Wood_House/Goblin_House_Destroyed.png" id="5_destr"]
+[ext_resource type="PackedScene" path="res://Misc/gold.tscn" id="6_gold0"]
+[ext_resource type="PackedScene" path="res://Enimes/repairer.tscn" id="7_repar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mb08w"]
+radius = 46.0109
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbg"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfill"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[node name="GoblinHouse" type="Sprite2D"]
+position = Vector2(0, -70)
+texture = ExtResource("1_vil47")
+script = ExtResource("2_hspwn")
+creatures = Array[PackedScene]([ExtResource("3_torch"), ExtResource("4_tnt01")])
+liberar_no_minuto = Array[float]([1.0, 3.0])
+pesos = Array[float]([2.0, 1.0])
+destroyed_texture = ExtResource("5_destr")
+reward_scene = ExtResource("6_gold0")
+repairer_scene = ExtResource("7_repar")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["estruturas"]]
+collision_layer = 17
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_mb08w")
+
+[node name="HealthProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -45.0
+offset_top = -108.0
+offset_right = 45.0
+offset_bottom = -100.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hbg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hfill")
+max_value = 100.0
+value = 100.0
+show_percentage = false

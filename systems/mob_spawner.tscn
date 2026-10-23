@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bpx1meecr3mho"]
+
+[ext_resource type="Script" path="res://systems/mob_spawner.gd" id="1_or48q"]
+[ext_resource type="PackedScene" path="res://Enimes/goblin_torch.tscn" id="2_7esdw"]
+[ext_resource type="Script" path="res://systems/spawn_fase.gd" id="2_jbl57"]
+[ext_resource type="PackedScene" path="res://Enimes/pawn.tscn" id="3_hpove"]
+[ext_resource type="PackedScene" path="res://Enimes/sheep.tscn" id="4_wr88h"]
+[ext_resource type="PackedScene" path="res://Enimes/goblin_tnt.tscn" id="5_tnt01"]
+
+[sub_resource type="Resource" id="Resource_bkfh7"]
+script = ExtResource("2_jbl57")
+cotas = Dictionary[PackedScene, int]({
+ExtResource("4_wr88h"): 6,
+ExtResource("3_hpove"): 4
+})
+
+[sub_resource type="Resource" id="Resource_5loyd"]
+script = ExtResource("2_jbl57")
+a_partir_do_minuto = 1.0
+cotas = Dictionary[PackedScene, int]({
+ExtResource("4_wr88h"): 3,
+ExtResource("3_hpove"): 3,
+ExtResource("2_7esdw"): 4
+})
+
+[sub_resource type="Resource" id="Resource_gew58"]
+script = ExtResource("2_jbl57")
+a_partir_do_minuto = 3.0
+maximo = 12
+cotas = Dictionary[PackedScene, int]({
+ExtResource("4_wr88h"): 2,
+ExtResource("3_hpove"): 3,
+ExtResource("2_7esdw"): 5,
+ExtResource("5_tnt01"): 2
+})
+
+[sub_resource type="Curve2D" id="Curve2D_ndpn8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500.524, -8.5214, 0, 0, 0, 0, 507.517, 196.702, 0, 0, 0, 0, 505.309, 347.957, 0, 0, 0, 0, 192.113, 338.725, 0, 0, 0, 0, -1.84016, 340.856, 0, 0, 0, 0, -216.771, 343.341, 0, 0, 0, 0, -441.271, 340.856, 0, 0, 0, 0, -443.479, 189.956, 0, 0, 0, 0, -431.702, 2.84047, 0, 0, 0, 0, -457.465, -152.675, 0, 0, 0, 0, -439.063, -254.222, 0, 0, 0, 0, -230.757, -244.99, 0, 0, 0, 0, 0.368033, -258.837, 0, 0, 0, 0, 215.299, -242.86, 0, 0, 0, 0, 365.088, -251.736)
+}
+point_count = 15
+
+[node name="MobSpawner" type="Node2D" unique_id=731974919]
+script = ExtResource("1_or48q")
+fases = Array[ExtResource("2_jbl57")]([SubResource("Resource_bkfh7"), SubResource("Resource_5loyd"), SubResource("Resource_gew58")])
+
+[node name="Path2D" type="Path2D" parent="." unique_id=892143962]
+scale = Vector2(2.71715, 2.81644)
+curve = SubResource("Curve2D_ndpn8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=170446242]
+position = Vector2(500.524, -8.5214)
+rotation = 1.53674
+
+[node name="_Timer_114990" type="Timer" parent="Path2D/PathFollow2D" unique_id=950568089]
+wait_time = 0.2
+one_shot = true

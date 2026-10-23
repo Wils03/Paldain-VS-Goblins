@@ -1,0 +1,200 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Warrior/Yellow/Warrior_Yellow.png" id="1_iwhwo"]
+[ext_resource type="PackedScene" path="res://Player/player.tscn" id="2_r2bqr"]
+[ext_resource type="PackedScene" path="res://Enimes/pawn.tscn" id="3_r3tvi"]
+[ext_resource type="PackedScene" path="res://Enimes/goblin_torch.tscn" id="4_y2vk0"]
+
+[node name="TestPlayer" type="Node2D"]
+position = Vector2(80, -19)
+
+[node name="WarriorYellow" type="Sprite2D" parent="."]
+position = Vector2(1857, 208)
+texture = ExtResource("1_iwhwo")
+
+[node name="Label9" type="Label" parent="WarriorYellow"]
+offset_left = -509.0
+offset_top = -838.0
+offset_right = -281.0
+offset_bottom = -794.0
+scale = Vector2(5, 3.74)
+text = "0      1        2       3       4       5"
+
+[node name="Label" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = -700.0
+offset_right = 612.0
+offset_bottom = -677.0
+scale = Vector2(4, 4)
+text = "Idle"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = -523.0
+offset_right = 612.0
+offset_bottom = -500.0
+scale = Vector2(4, 4)
+text = "Run"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = -354.0
+offset_right = 687.0
+offset_bottom = -331.0
+scale = Vector2(4, 4)
+text = "Atttack_side_1"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = -146.0
+offset_right = 687.0
+offset_bottom = -123.0
+scale = Vector2(4, 4)
+text = "Atttack_side_2"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = 69.0
+offset_right = 698.0
+offset_bottom = 92.0
+scale = Vector2(4, 4)
+text = "Atttack_down_1"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = 241.0
+offset_right = 698.0
+offset_bottom = 264.0
+scale = Vector2(4, 4)
+text = "Atttack_down_2"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = 424.0
+offset_right = 698.0
+offset_bottom = 447.0
+scale = Vector2(4, 4)
+text = "Atttack_up_1"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="WarriorYellow"]
+offset_left = 576.0
+offset_top = 623.0
+offset_right = 698.0
+offset_bottom = 646.0
+scale = Vector2(4, 4)
+text = "Atttack_up_2"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label10" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = -719.0
+offset_right = -633.0
+offset_bottom = -696.0
+scale = Vector2(4, 4)
+text = "00
+"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label11" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = -542.0
+offset_right = -633.0
+offset_bottom = -519.0
+scale = Vector2(4, 4)
+text = "01"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label12" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = -373.0
+offset_right = -633.0
+offset_bottom = -350.0
+scale = Vector2(4, 4)
+text = "02"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label13" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = -165.0
+offset_right = -633.0
+offset_bottom = -142.0
+scale = Vector2(4, 4)
+text = "03"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label14" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = 50.0
+offset_right = -633.0
+offset_bottom = 73.0
+scale = Vector2(4, 4)
+text = "04"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label15" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = 222.0
+offset_right = -633.0
+offset_bottom = 245.0
+scale = Vector2(4, 4)
+text = "05"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label16" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = 405.0
+offset_right = -633.0
+offset_bottom = 428.0
+scale = Vector2(4, 4)
+text = "06"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label17" type="Label" parent="WarriorYellow"]
+offset_left = -653.0
+offset_top = 604.0
+offset_right = -633.0
+offset_bottom = 627.0
+scale = Vector2(4, 4)
+text = "07"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_r2bqr")]
+position = Vector2(-29, 124)
+
+[node name="Pawn" parent="." instance=ExtResource("3_r3tvi")]
+position = Vector2(244, 320)
+
+[node name="GoblinTorch" parent="." instance=ExtResource("4_y2vk0")]
+position = Vector2(151, 554)
+
+[node name="GoblinTorch2" parent="." instance=ExtResource("4_y2vk0")]
+position = Vector2(864, 447)
+
+[node name="Pawn2" parent="." instance=ExtResource("3_r3tvi")]
+position = Vector2(853, 165)
+
+[node name="Pawn3" parent="." instance=ExtResource("3_r3tvi")]
+position = Vector2(611, 582)

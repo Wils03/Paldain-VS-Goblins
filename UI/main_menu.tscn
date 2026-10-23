@@ -1,0 +1,145 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://UI/ui_theme.tres" id="1_4cwpn"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="2_f40uw"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="3_8ctay"]
+[ext_resource type="PackedScene" path="res://UI/volume_settings.tscn" id="4_ev3b6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0a0m"]
+content_margin_left = 72.0
+content_margin_top = 6.0
+content_margin_right = 72.0
+content_margin_bottom = 14.0
+texture = ExtResource("3_8ctay")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mudq"]
+font_size = 44
+font_color = Color(1, 0.95, 0.8, 1)
+outline_size = 10
+outline_color = Color(0.25, 0.05, 0.05, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cafmx"]
+font_size = 22
+outline_size = 6
+outline_color = Color(0.05, 0.2, 0.2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tcix6"]
+font_size = 34
+font_color = Color(0.42, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mmlvu"]
+font_size = 18
+outline_size = 5
+outline_color = Color(0.05, 0.2, 0.2, 1)
+
+[node name="MainMenu" type="Control" unique_id=1744158092]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_4cwpn")
+script = ExtResource("2_f40uw")
+
+[node name="Water" type="ColorRect" parent="." unique_id=645354739]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.278, 0.671, 0.663, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1775404219]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=224151117]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="TitleRibbon" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=1938327325]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k0a0m")
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer/TitleRibbon" unique_id=195234035]
+layout_mode = 2
+text = "PALADIN VS GOBLINS"
+label_settings = SubResource("LabelSettings_2mudq")
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1168083722]
+layout_mode = 2
+text = "Sobreviva à horda de goblins!"
+label_settings = SubResource("LabelSettings_cafmx")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1453850737]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1971785184]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer/Buttons" unique_id=1997813472]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Jogar"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer/Buttons" unique_id=1029028529]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Volume"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/Buttons" unique_id=2113102746]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"RedButton"
+text = "Sair"
+
+[node name="OptionsPanel" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=1699468801]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/OptionsPanel" unique_id=1031054790]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer/OptionsPanel/VBoxContainer" unique_id=1703940342]
+layout_mode = 2
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_tcix6")
+horizontal_alignment = 1
+
+[node name="VolumeSettings" parent="CenterContainer/VBoxContainer/OptionsPanel/VBoxContainer" unique_id=1979218554 instance=ExtResource("4_ev3b6")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer/OptionsPanel/VBoxContainer" unique_id=1498375025]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar"
+
+[node name="Controls" type="Label" parent="." unique_id=1959948532]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -16.0
+text = "WASD / Setas: mover    Clique: atacar    Q: ritual sagrado    ESC: pausar"
+label_settings = SubResource("LabelSettings_mmlvu")
+horizontal_alignment = 1

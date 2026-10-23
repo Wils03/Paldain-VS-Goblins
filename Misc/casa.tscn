@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c8beych1yrw4o"]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Knights/Buildings/House/House_Yellow.png" id="1_ucys0"]
+
+[node name="Casa" type="Sprite2D"]
+position = Vector2(5, -73)
+texture = ExtResource("1_ucys0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-42, 36, -43, 72, 45, 71, 42, 38, 37, 7, -1, -24, -39, 9)

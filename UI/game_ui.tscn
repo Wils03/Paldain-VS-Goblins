@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://64mce2wuwwjn"]
+
+[ext_resource type="Script" uid="uid://cin671df6mv1x" path="res://UI/game_ui.gd" id="1_bcgt1"]
+[ext_resource type="Texture2D" uid="uid://qknigc484ybt" path="res://Addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_aurt8"]
+[ext_resource type="Texture2D" uid="uid://db0avxgdlxyae" path="res://Addons/Tiny Swords/Resources/Resources/G_Idle_(NoShadow).png" id="3_n7ipy"]
+[ext_resource type="Script" uid="uid://bgbf5rbkbkunt" path="res://Test_Scene/gold_label.gd" id="4_a6avt"]
+[ext_resource type="Texture2D" uid="uid://c4cqk0sankili" path="res://Addons/Tiny Swords/UI/Banners/Banner_Vertical.png" id="5_111n5"]
+[ext_resource type="Script" uid="uid://ddddcvbdbxyxm" path="res://Misc/cooldownRitualLabel.gd" id="6_k417c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbv7p"]
+texture = ExtResource("2_aurt8")
+texture_margin_left = 32.0
+texture_margin_top = 8.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 120)
+modulate_color = Color(1, 1, 1, 0.784314)
+
+[sub_resource type="SystemFont" id="SystemFont_odopa"]
+font_names = PackedStringArray("Cursive")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qheji"]
+line_spacing = 10.0
+font = SubResource("SystemFont_odopa")
+font_size = 30
+font_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajvfq"]
+atlas = ExtResource("3_n7ipy")
+region = Rect2(48, 48, 48, 48)
+margin = Rect2(-10, 0, 0, 0)
+
+[sub_resource type="SystemFont" id="SystemFont_nbbsd"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4swcm"]
+font = SubResource("SystemFont_nbbsd")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0.811765, 0.443137, 0, 0.52549)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m216k"]
+texture = ExtResource("5_111n5")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 24.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 32, 128, 128)
+modulate_color = Color(1, 1, 1, 0.901961)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0tu6s"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_neaff"]
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[node name="GameUi" type="CanvasLayer" unique_id=1525551549]
+script = ExtResource("1_bcgt1")
+
+[node name="TimerPainel" type="Panel" parent="." unique_id=361551327]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.5
+offset_right = 79.5
+offset_bottom = 83.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_cbv7p")
+
+[node name="TimerLabel" type="Label" parent="TimerPainel" unique_id=1944999567]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 127.0
+offset_bottom = 51.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_qheji")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PainelResources" type="Panel" parent="." unique_id=1544991452]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_right = -7.0
+offset_bottom = 91.0
+grow_horizontal = 0
+scale = Vector2(0.959998, 1)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_cbv7p")
+
+[node name="TextureRect" type="TextureRect" parent="PainelResources" unique_id=1168492982]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 185.0
+offset_bottom = 59.0
+texture = SubResource("AtlasTexture_ajvfq")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="GoldLabel" type="Label" parent="PainelResources" unique_id=444728483]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 185.0
+offset_bottom = 51.0
+size_flags_horizontal = 8
+text = "0 Gold"
+label_settings = SubResource("LabelSettings_4swcm")
+script = ExtResource("4_a6avt")
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=1786103703]
+offset_right = 142.0
+offset_bottom = 136.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_m216k")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1637496026]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 109.0
+offset_bottom = 85.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Ritual
+Cooldown"
+label_settings = SubResource("LabelSettings_0tu6s")
+horizontal_alignment = 1
+
+[node name="CooldownRitualLabel" type="Label" parent="PanelContainer" unique_id=1339182669]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 31.0
+offset_top = 48.0
+offset_right = 109.0
+offset_bottom = 103.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "0"
+label_settings = SubResource("LabelSettings_neaff")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_k417c")
+
+[node name="Label2" type="Label" parent="PanelContainer" unique_id=1909754182]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 91.0
+offset_right = 109.0
+offset_bottom = 114.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Press Q"
+label_settings = SubResource("LabelSettings_0tu6s")
+horizontal_alignment = 1

@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://UI/volume_settings.gd" id="1_hovku"]
+
+[node name="VolumeSettings" type="VBoxContainer" unique_id=1979218554]
+script = ExtResource("1_hovku")

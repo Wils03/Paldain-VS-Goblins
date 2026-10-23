@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bwrd6qruhgu3k"]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_02.png" id="1_01uwb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kicg4"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij4di"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5b3k"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxbln"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wimb1"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_562gp"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a8at"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sn2v"]
+atlas = ExtResource("1_01uwb")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pyl88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kicg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij4di")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5b3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxbln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wimb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_562gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a8at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sn2v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.5
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(0, -27)
+sprite_frames = SubResource("SpriteFrames_pyl88")
+autoplay = "default"
+frame_progress = 0.586422

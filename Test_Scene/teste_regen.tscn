@@ -1,0 +1,24 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://Player/player.tscn" id="1_t55md"]
+[ext_resource type="PackedScene" path="res://Enimes/sheep.tscn" id="2_jk8jx"]
+[ext_resource type="PackedScene" path="res://Misc/bife.tscn" id="3_qj824"]
+[ext_resource type="PackedScene" path="res://Misc/gold.tscn" id="4_gnx34"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_t55md")]
+position = Vector2(222, 202)
+health = 50.0
+
+[node name="Sheep" parent="." instance=ExtResource("2_jk8jx")]
+position = Vector2(662, 54)
+
+[node name="Sheep2" parent="." instance=ExtResource("2_jk8jx")]
+position = Vector2(929, 264)
+
+[node name="Bife" parent="." instance=ExtResource("3_qj824")]
+position = Vector2(63, 437)
+
+[node name="Gold" parent="." instance=ExtResource("4_gnx34")]
+position = Vector2(39, 56)

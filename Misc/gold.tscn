@@ -1,0 +1,81 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="1_dlji8"]
+[ext_resource type="Script" path="res://Misc/gold.gd" id="2_1wv4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm5mk"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehq86"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj58s"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq2qp"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg1q7"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccrki"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ovcd"]
+atlas = ExtResource("1_dlji8")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jstt2"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_pm5mk")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ehq86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj58s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq2qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg1q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccrki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ovcd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26aoq"]
+radius = 13.0426
+
+[node name="Gold" type="AnimatedSprite2D"]
+position = Vector2(-1, -7)
+scale = Vector2(1, 0.949)
+sprite_frames = SubResource("SpriteFrames_jstt2")
+frame = 6
+offset = Vector2(0, -30)
+script = ExtResource("2_1wv4l")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+position = Vector2(1, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 6.40885)
+shape = SubResource("CircleShape2D_26aoq")

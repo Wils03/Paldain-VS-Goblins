@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://eetqqgkthlyl"]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_04.png" id="1_a74fy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi2sg"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04ehb"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36rcb"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b738k"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi55l"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkue2"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp0rw"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wxwb"]
+atlas = ExtResource("1_a74fy")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dsdwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi2sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04ehb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36rcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b738k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi55l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkue2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp0rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wxwb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.5
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(4, -39)
+sprite_frames = SubResource("SpriteFrames_dsdwp")
+autoplay = "default"

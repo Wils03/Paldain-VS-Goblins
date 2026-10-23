@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://systems/mob_spawner.tscn" id="1_nbsw2"]
+[ext_resource type="PackedScene" path="res://UI/game_ui.tscn" id="2_bb7n5"]
+[ext_resource type="PackedScene" path="res://Player/player.tscn" id="3_6ncdo"]
+
+[node name="Node" type="Node"]
+
+[node name="MobSpawner" parent="." instance=ExtResource("1_nbsw2")]
+position = Vector2(302, 265)
+scale = Vector2(0.603134, 0.58)
+
+[node name="GameUi" parent="." instance=ExtResource("2_bb7n5")]
+
+[node name="Player" parent="." instance=ExtResource("3_6ncdo")]

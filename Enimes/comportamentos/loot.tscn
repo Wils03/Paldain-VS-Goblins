@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Enimes/comportamentos/loot.gd" id="1_jrjdq"]
+[ext_resource type="PackedScene" path="res://Misc/bife.tscn" id="2_uhf8y"]
+
+[node name="Loot" type="Node"]
+script = ExtResource("1_jrjdq")
+loot = [ExtResource("2_uhf8y")]

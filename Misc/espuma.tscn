@@ -1,0 +1,73 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Terrain/Water/Foam/Foam.png" id="1_lr76e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phv7t"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjpi8"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sowis"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmy0t"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17vpl"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nttgc"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2qut"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0xme"]
+atlas = ExtResource("1_lr76e")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qe2e0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phv7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjpi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sowis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmy0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17vpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nttgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2qut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0xme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.5
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(-1, -46)
+sprite_frames = SubResource("SpriteFrames_qe2e0")
+autoplay = "default"
+frame_progress = 0.272187

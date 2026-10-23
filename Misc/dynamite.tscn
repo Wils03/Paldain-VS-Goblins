@@ -1,0 +1,140 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Misc/dynamite.gd" id="1_tc7c0"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Factions/Goblins/Troops/TNT/Dynamite/Dynamite.png" id="2_pytwj"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Effects/Explosion/Explosions.png" id="3_ylnec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2csjt"]
+atlas = ExtResource("2_pytwj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwphj"]
+atlas = ExtResource("2_pytwj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vw5a"]
+atlas = ExtResource("2_pytwj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4xr7"]
+atlas = ExtResource("2_pytwj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7na3h"]
+atlas = ExtResource("2_pytwj")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5365y"]
+atlas = ExtResource("2_pytwj")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4u55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2csjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwphj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vw5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7na3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5365y")
+}],
+"loop": true,
+"name": &"Fuse",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac6cx"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3u33"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wme6m"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_453rj"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhfk0"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmb2k"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrvms"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahxhg"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbpep"]
+atlas = ExtResource("3_ylnec")
+region = Rect2(1536, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_puslw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac6cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3u33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wme6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_453rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhfk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmb2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrvms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahxhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbpep")
+}],
+"loop": false,
+"name": &"Explode",
+"speed": 14.0
+}]
+
+[node name="Dynamite" type="Node2D" unique_id=1876552243]
+script = ExtResource("1_tc7c0")
+
+[node name="DynamiteSprite" type="AnimatedSprite2D" parent="." unique_id=814460533]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_l4u55")
+animation = &"Fuse"
+
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." unique_id=535155193]
+z_index = 1
+position = Vector2(0, -30)
+sprite_frames = SubResource("SpriteFrames_puslw")
+animation = &"Explode"

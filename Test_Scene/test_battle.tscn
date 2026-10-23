@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://Player/player.tscn" id="1_1ef4r"]
+[ext_resource type="PackedScene" path="res://Enimes/pawn.tscn" id="2_v4y57"]
+[ext_resource type="PackedScene" path="res://Enimes/sheep.tscn" id="3_dpyr5"]
+[ext_resource type="PackedScene" path="res://Enimes/goblin_torch.tscn" id="4_yu5bd"]
+
+[node name="TestBattle" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_1ef4r")]
+position = Vector2(247, 216)
+
+[node name="Pawn" parent="." instance=ExtResource("2_v4y57")]
+position = Vector2(528, 332)
+attack_enemy = 2
+
+[node name="Sheep" parent="." instance=ExtResource("3_dpyr5")]
+position = Vector2(100, 371)
+attack_enemy = 0
+
+[node name="Sheep2" parent="." instance=ExtResource("3_dpyr5")]
+position = Vector2(1110, 44)
+attack_enemy = 0
+
+[node name="GoblinTorch" parent="." instance=ExtResource("4_yu5bd")]
+position = Vector2(1045, 360)
+attack_enemy = 5
+
+[node name="GoblinTorch2" parent="." instance=ExtResource("4_yu5bd")]
+position = Vector2(557, 92)
+attack_enemy = 5

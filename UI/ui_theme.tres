@@ -1,0 +1,133 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="1_m23m8"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Hover_3Slides.png" id="2_xdauq"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="3_30aw8"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_t6t5y"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="5_1ij4y"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Red_3Slides.png" id="6_n63ki"]
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Buttons/Button_Red_3Slides_Pressed.png" id="7_ew4lh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0illp"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("1_m23m8")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iiorx"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("2_xdauq")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sf2f"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("2_xdauq")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7wc5"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("3_30aw8")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bi8sk"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("4_t6t5y")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtvnw"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.85, 0.6, 0.15, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwt2j"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35, 0.22, 0.12, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t08hc"]
+content_margin_left = 56.0
+content_margin_top = 44.0
+content_margin_right = 56.0
+content_margin_bottom = 52.0
+texture = ExtResource("5_1ij4y")
+texture_margin_left = 56.0
+texture_margin_top = 48.0
+texture_margin_right = 56.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(24, 8, 136, 176)
+modulate_color = Color(1, 1, 0.815686, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usoxr"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("6_n63ki")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in1ks"]
+content_margin_left = 30.0
+content_margin_top = 6.0
+content_margin_right = 30.0
+content_margin_bottom = 14.0
+texture = ExtResource("7_ew4lh")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[resource]
+default_font_size = 22
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.15, 0.1, 0.05, 1)
+Button/colors/font_hover_color = Color(0.15, 0.1, 0.05, 1)
+Button/colors/font_outline_color = Color(0.1, 0.07, 0.05, 1)
+Button/colors/font_pressed_color = Color(0.9, 0.9, 0.9, 1)
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 26
+Button/styles/disabled = SubResource("StyleBoxTexture_0illp")
+Button/styles/focus = SubResource("StyleBoxTexture_iiorx")
+Button/styles/hover = SubResource("StyleBoxTexture_6sf2f")
+Button/styles/normal = SubResource("StyleBoxTexture_b7wc5")
+Button/styles/pressed = SubResource("StyleBoxTexture_bi8sk")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_jtvnw")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_jtvnw")
+HSlider/styles/slider = SubResource("StyleBoxFlat_jwt2j")
+Label/colors/font_color = Color(0.18, 0.11, 0.05, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_t08hc")
+RedButton/base_type = &"Button"
+RedButton/styles/normal = SubResource("StyleBoxTexture_usoxr")
+RedButton/styles/pressed = SubResource("StyleBoxTexture_in1ks")

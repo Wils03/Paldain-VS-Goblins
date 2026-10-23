@@ -1,0 +1,80 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_lmab4"]
+[ext_resource type="Script" path="res://Misc/life_regen.gd" id="2_m7bh4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo3qr"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl6h2"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8oxb"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ce46"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdfmw"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwyak"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_643aa"]
+atlas = ExtResource("1_lmab4")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jstt2"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_uo3qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl6h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8oxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ce46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdfmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwyak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_643aa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26aoq"]
+radius = 17.2627
+
+[node name="Bife" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jstt2")
+frame = 6
+frame_progress = 0.812708
+offset = Vector2(0, -30)
+script = ExtResource("2_m7bh4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+position = Vector2(1, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_26aoq")
