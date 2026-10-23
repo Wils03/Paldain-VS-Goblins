@@ -11,7 +11,7 @@ const BUS_MASTER = "Master";
 const BUS_MUSIC = "Music";
 const BUS_SFX = "SFX";
 const BUS_AMBIENT = "Ambient";
-const BUS_DIALOGUE = "Dialogue";
+#const BUS_DIALOGUE = "Dialogue";
 
 #Ordem e nomes mostrados no painel de volume
 const CATEGORIES = [
@@ -19,7 +19,8 @@ const CATEGORIES = [
 	[BUS_MUSIC, "Música"],
 	[BUS_SFX, "Efeitos"],
 	[BUS_AMBIENT, "Ambiente"],
-	[BUS_DIALOGUE, "Diálogo"],
+	#Desativado: o jogo ainda não tem diálogos. Descomente quando tiver.
+	#[BUS_DIALOGUE, "Diálogo"],
 ];
 
 #Volumes de 0.0 a 1.0
@@ -28,7 +29,7 @@ var volumes: Dictionary = {
 	BUS_MUSIC: 0.8,
 	BUS_SFX: 0.9,
 	BUS_AMBIENT: 0.8,
-	BUS_DIALOGUE: 1.0,
+#	BUS_DIALOGUE: 1.0,
 };
 
 func _ready():
