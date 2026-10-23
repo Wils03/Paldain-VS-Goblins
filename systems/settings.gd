@@ -32,6 +32,9 @@ var volumes: Dictionary = {
 #	BUS_DIALOGUE: 1.0,
 };
 
+#A tela de comandos aparece sozinha só até o jogador vê-la uma vez
+var comandos_vistos: bool = false;
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS;
 	for category in CATEGORIES:
@@ -66,6 +69,7 @@ func save_settings():
 	var config = ConfigFile.new();
 	for bus in volumes:
 		config.set_value("audio", bus, volumes[bus]);
+	config.set_value("tutorial", "comandos_vistos", comandos_vistos);
 	config.save(SAVE_PATH);
 
 func load_settings():
@@ -73,3 +77,4 @@ func load_settings():
 	if config.load(SAVE_PATH) != OK: return
 	for bus in volumes:
 		volumes[bus] = float(config.get_value("audio", bus, volumes[bus]));
+	comandos_vistos = bool(config.get_value("tutorial", "comandos_vistos", false));

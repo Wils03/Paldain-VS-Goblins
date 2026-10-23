@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" path="res://UI/game_over_ui.tscn" id="25_banhf"]
 [ext_resource type="PackedScene" path="res://Misc/goblin_house.tscn" id="28_tycml"]
 [ext_resource type="PackedScene" path="res://UI/pause_menu.tscn" id="29_pause"]
+[ext_resource type="PackedScene" path="res://UI/controls_screen.tscn" id="30_controls"]
 [ext_resource type="Script" path="res://systems/phase_manager.gd" id="30_phase"]
 [ext_resource type="PackedScene" path="res://UI/shop_ui.tscn" id="31_shop"]
 
@@ -746,3 +747,5 @@ shape = SubResource("RectangleShape2D_jq2sk")
 [node name="PhaseManager" type="Node" parent="." unique_id=1152238949]
 script = ExtResource("30_phase")
 shop_scene = ExtResource("31_shop")
+
+[node name="ControlsScreen" parent="." instance=ExtResource("30_controls")]

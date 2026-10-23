@@ -58,6 +58,12 @@ custom_minimum_size = Vector2(220, 64)
 layout_mode = 2
 text = "Continuar"
 
+[node name="ControlsButton" type="Button" parent="CenterContainer/Panel/VBoxContainer/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 64)
+layout_mode = 2
+text = "Comandos"
+
 [node name="MenuButton" type="Button" parent="CenterContainer/Panel/VBoxContainer/Buttons" unique_id=1904121438]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(260, 64)
