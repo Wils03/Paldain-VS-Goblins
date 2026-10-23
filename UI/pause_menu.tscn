@@ -1,7 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dk215hf3khs4g"]
 
-[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_03fe5"]
-[ext_resource type="Theme" path="res://UI/ui_theme.tres" id="2_0b5ob"]
+[ext_resource type="Script" uid="uid://chwiiwr3ndb0u" path="res://UI/pause_menu.gd" id="1_03fe5"]
+[ext_resource type="Theme" uid="uid://dp35c5qcxg4o" path="res://UI/ui_theme.tres" id="2_0b5ob"]
 [ext_resource type="PackedScene" path="res://UI/volume_settings.tscn" id="3_pqlge"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nben2"]

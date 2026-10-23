@@ -1,8 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cqa30nrepblcr"]
 
-[ext_resource type="Theme" path="res://UI/ui_theme.tres" id="1_4cwpn"]
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="2_f40uw"]
-[ext_resource type="Texture2D" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="3_8ctay"]
+[ext_resource type="Theme" uid="uid://dp35c5qcxg4o" path="res://UI/ui_theme.tres" id="1_4cwpn"]
+[ext_resource type="Script" uid="uid://cbc7bobphe18f" path="res://UI/main_menu.gd" id="2_f40uw"]
+[ext_resource type="Texture2D" uid="uid://btre5g34g0d77" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="3_8ctay"]
 [ext_resource type="PackedScene" path="res://UI/volume_settings.tscn" id="4_ev3b6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0a0m"]
@@ -38,7 +38,7 @@ outline_color = Color(0.05, 0.2, 0.2, 1)
 
 [node name="MainMenu" type="Control" unique_id=1744158092]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource("1_4cwpn")

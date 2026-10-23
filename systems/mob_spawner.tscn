@@ -45,8 +45,8 @@ script = ExtResource("1_or48q")
 fases = Array[ExtResource("2_jbl57")]([SubResource("Resource_bkfh7"), SubResource("Resource_5loyd"), SubResource("Resource_gew58")])
 
 [node name="Path2D" type="Path2D" parent="." unique_id=892143962]
-position = Vector2(348.91238, 0)
-scale = Vector2(3.4798582, 2.81644)
+position = Vector2(-75.899734, -198.42305)
+scale = Vector2(5.9897485, 5.978964)
 curve = SubResource("Curve2D_ndpn8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=170446242]
