@@ -44,7 +44,7 @@ layout_mode = 2
 [node name="Hint" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=312518865]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "ESC para continuar"
+text = "Toque em Continuar ou use o Voltar"
 horizontal_alignment = 1
 
 [node name="Buttons" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer" unique_id=1511072487]

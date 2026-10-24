@@ -30,6 +30,20 @@ func _unhandled_input(event):
 		pause();
 	get_viewport().set_input_as_handled();
 
+#CELULAR: botão "voltar" do Android funciona como o ESC,
+#e o jogo pausa sozinho quando o app vai para segundo plano
+func _notification(what):
+	if what != NOTIFICATION_WM_GO_BACK_REQUEST and what != NOTIFICATION_APPLICATION_PAUSED: return
+	if GameManager.na_loja or GameManager.is_game_over: return
+	var controls = get_tree().get_first_node_in_group("controls_screen");
+	if controls and controls.visible:
+		if what == NOTIFICATION_WM_GO_BACK_REQUEST: controls.fechar();
+		return
+	if not visible:
+		pause();
+	elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		resume();
+
 func pause():
 	visible = true;
 	get_tree().paused = true;

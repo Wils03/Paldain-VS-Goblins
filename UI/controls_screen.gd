@@ -3,12 +3,12 @@ extends CanvasLayer
 #Tela de comandos: aparece sozinha na primeira partida (com o jogo pausado)
 #e pode ser aberta de novo pelo botão "Comandos" do menu de pausa.
 
-#[teclas, o que faz]
+#[controle na tela, o que faz] (versão celular: controles de toque)
 const COMANDOS = [
-	["W A S D  /  Setas", "Andar"],
-	["Clique esquerdo", "Atacar (na direção em que está andando)"],
-	["Q", "Ritual sagrado (quando estiver pronto)"],
-	["ESC", "Pausar o jogo"],
+	["Metade esquerda", "Toque e arraste para andar (joystick)"],
+	["Espada", "Atacar na direção em que está andando (segure para repetir)"],
+	["Estrela", "Ritual sagrado (o número mostra a recarga)"],
+	["Pausa  /  Voltar", "Pausar o jogo"],
 ];
 
 const DICAS = [

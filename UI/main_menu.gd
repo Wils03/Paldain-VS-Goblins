@@ -27,6 +27,14 @@ func _unhandled_input(event):
 		show_options(false);
 		get_viewport().set_input_as_handled();
 
+#CELULAR: botão "voltar" do Android fecha as opções ou sai do jogo
+func _notification(what):
+	if what != NOTIFICATION_WM_GO_BACK_REQUEST: return
+	if options_panel.visible:
+		show_options(false);
+	else:
+		get_tree().quit();
+
 func on_play_pressed():
 	Sfx.play("ui_confirm");
 	#Zera tempo, ouro e abates antes de começar
